@@ -1,5 +1,7 @@
 # New Day Countdown
 
+![](https://github.com/wannaphong/New-Day-Countdown/blob/main/New%20Day%20Countdown.png?raw=true)
+
 This Application will help you for countdown time to new day only!
 
 ## Privacy Policy
