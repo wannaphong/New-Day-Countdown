@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">New Day Countdown</string>
+    <string name="countdown_title">Time Until New Day</string>
+    <string name="new_day_message">Happy New Day!</string>
 </resources>

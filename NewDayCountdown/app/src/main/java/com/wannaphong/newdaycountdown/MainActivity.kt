@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                time_show.text = "Happy New Day!!!" //getString(R.string.new_day_start)
+                time_show.text = getString(R.string.new_day_message)
             }
         }.start()
     }
