@@ -23,7 +23,16 @@ To create a release:
 3. Tag the version and publish the release
 4. The AAB will be built automatically and available in the workflow run artifacts
 
-**Note:** The generated AAB is unsigned by default. For production releases to Google Play, you'll need to sign the AAB. You can either configure signing in the build configuration with a keystore, or sign the AAB manually after downloading it.
+### Signing Configuration (Optional)
+
+To build a signed AAB ready for Google Play Store upload, configure the following secrets in your repository settings (Settings → Secrets and variables → Actions):
+
+- `KEYSTORE_BASE64`: Your keystore file encoded in base64 (run `base64 -i your-keystore.jks | tr -d '\n'` to encode)
+- `KEYSTORE_PASSWORD`: Password for the keystore file
+- `KEY_ALIAS`: Alias of the key in the keystore
+- `KEY_PASSWORD`: Password for the key
+
+If these secrets are not configured, the workflow will build an unsigned AAB that you'll need to sign manually before uploading to Google Play Store.
 
 
 contact: wannaphong@yahoo.com
