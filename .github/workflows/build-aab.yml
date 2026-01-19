@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      HAS_KEYSTORE: ${{ secrets.KEYSTORE_BASE64 != '' }}
     
     steps:
       - name: Checkout code
@@ -27,7 +29,7 @@ jobs:
       
       # Decode and setup keystore if secrets are available
       - name: Setup keystore
-        if: secrets.KEYSTORE_BASE64
+        if: env.HAS_KEYSTORE == 'true'
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > keystore.jks
           echo "KEYSTORE_FILE=${GITHUB_WORKSPACE}/NewDayCountdown/keystore.jks" >> $GITHUB_ENV
