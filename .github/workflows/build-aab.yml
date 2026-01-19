@@ -20,7 +20,8 @@ jobs:
           cache: gradle
       
       - name: Grant execute permission for gradlew
-        run: chmod +x NewDayCountdown/gradlew
+        run: chmod +x gradlew
+        working-directory: NewDayCountdown
       
       # Note: This builds an unsigned AAB. For production releases to Google Play,
       # you'll need to either:
@@ -28,9 +29,8 @@ jobs:
       # 2. Sign the AAB manually after downloading it
       # 3. Add signing configuration to this workflow using GitHub secrets
       - name: Build Release AAB
-        run: |
-          cd NewDayCountdown
-          ./gradlew bundleRelease
+        run: ./gradlew bundleRelease
+        working-directory: NewDayCountdown
       
       - name: Upload AAB
         uses: actions/upload-artifact@v4
