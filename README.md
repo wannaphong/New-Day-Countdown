@@ -23,5 +23,7 @@ To create a release:
 3. Tag the version and publish the release
 4. The AAB will be built automatically and available in the workflow run artifacts
 
+**Note:** The generated AAB is unsigned by default. For production releases to Google Play, you'll need to sign the AAB. You can either configure signing in the build configuration with a keystore, or sign the AAB manually after downloading it.
+
 
 contact: wannaphong@yahoo.com
